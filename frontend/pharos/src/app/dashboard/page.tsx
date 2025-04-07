@@ -1,8 +1,11 @@
+"use client"
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { ArrowUpRight, ArrowDownLeft, Clock, Plus } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Dashboard() {
+    const router = useRouter();
   // Sample data
   const balances = [
     { token: 'ETH', amount: '1.243', value: '$2,486.00', icon: '⟠' },
@@ -46,7 +49,7 @@ export default function Dashboard() {
             </div>
             
             <div className="mt-6 grid grid-cols-2 gap-4">
-              <button className="flex items-center justify-center px-4 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition cursor-pointer">
+              <button className="flex items-center justify-center px-4 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition cursor-pointer" onClick={() => router.push("/send")}>
                 <ArrowUpRight className="w-5 h-5 mr-2" />
                 Send
               </button>
