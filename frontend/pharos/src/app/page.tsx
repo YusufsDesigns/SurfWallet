@@ -28,7 +28,7 @@ export default function LandingPage() {
             <a href="#faq" className="text-gray-700 hover:text-indigo-600 transition">FAQ</a>
           </div>
           <div>
-            <a href="/login" className="hidden md:inline-block px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+            <a href="/onboarding" className="hidden md:inline-block px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
               Launch App
             </a>
           </div>
@@ -46,7 +46,7 @@ export default function LandingPage() {
               Secure, simple, and social. Manage your crypto assets with confidence using advanced multisig security and intuitive controls.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <a href="/login" className="px-8 py-3 bg-indigo-600 text-white text-center rounded-lg font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+              <a href="/onboarding" className="px-8 py-3 bg-indigo-600 text-white text-center rounded-lg font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
                 Get Started
               </a>
               <a href="#features" className="px-8 py-3 border border-gray-300 text-gray-700 text-center rounded-lg font-medium hover:bg-gray-50 transition">
@@ -58,7 +58,7 @@ export default function LandingPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-indigo-100 rounded-full opacity-80 blur-2xl"></div>
               <div className="relative">
-                <img src="/api/placeholder/500/560" alt="Smart Wallet Interface" className="rounded-2xl shadow-2xl" />
+                <img src="/smart_wallet_hero.webp" alt="Smart Wallet Interface" className="rounded-2xl shadow-2xl" />
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function LandingPage() {
             
             <div className="md:w-1/2 flex justify-center">
               <div className="bg-white p-8 rounded-2xl shadow-xl">
-                <img src="/api/placeholder/400/320" alt="Security Features" className="rounded-xl" />
+                <img src="/smart_wallet_security.webp" alt="Security Features" className="rounded-xl" />
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="container mx-auto px-6 py-16 md:py-24">
+      {/* <section className="container mx-auto px-6 py-16 md:py-24">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted by Users</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -214,7 +214,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FAQ Section */}
       <section id="faq" className="bg-gray-50 py-16 md:py-24">
