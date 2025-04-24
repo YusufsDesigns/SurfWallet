@@ -3,9 +3,17 @@ import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
 import { ArrowUpRight, ArrowDownLeft, Clock, Plus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useWeb3Auth } from '../../components/Web3AuthProvider';
+import { useAccount, useBalance } from 'wagmi';
+import RPC from "@/app/vIemRPC"
 
 export default function Dashboard() {
     const router = useRouter();
+    const { provider, user } = useWeb3Auth();
+    const { address } = useAccount();
+    const { data: balance } = useBalance({
+      address,
+    });
   // Sample data
   const balances = [
     { token: 'ETH', amount: '1.243', value: '$2,486.00', icon: '⟠' },
@@ -20,6 +28,26 @@ export default function Dashboard() {
     { type: 'send', token: 'LINK', amount: '10', address: '0x8765...4321', time: '1 day ago' },
   ];
 
+  // const getAccounts = async () => {
+  //   if (!provider) {
+  //     console.log("not init yet")
+  //     return;
+  //   }
+  //   const address = await RPC.getAccounts(provider);
+  //   console.log(address);
+  //   return address;
+  // };
+
+  // const getBalance = async () => {
+  //   if (!provider) {
+  //     console.log("not init yet")
+  //     return;
+  //   }
+  //   const balance = await RPC.getBalance(provider);
+  //   console.log(balance);
+  //   return balance;
+  // };
+
   return (
     <MainLayout>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -29,6 +57,8 @@ export default function Dashboard() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-gray-800">Your Assets</h2>
               <span className="text-2xl font-bold text-gray-900">$5,176.00</span>
+              <p>Address: {address || "0x00"}</p>
+              <p>Balance: {balance?.value || 0}</p>
             </div>
             
             <div className="space-y-4">

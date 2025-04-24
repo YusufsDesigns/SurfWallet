@@ -28,21 +28,11 @@ export default function WelcomeStep() {
                         </div>
                         <div>
                             <h3 className="font-medium text-gray-900">Create your account</h3>
-                            <p className="text-gray-600 text-sm">Set up your personal details and credentials</p>
+                            <p className="text-gray-600 text-sm">Set up your personal details and credentials using your socials no seed phrases or private key burden</p>
                         </div>
                     </div>
 
-                    <div className="flex items-start">
-                        <div className="bg-indigo-100 rounded-full p-1 mr-3 mt-1">
-                            <Check className="h-4 w-4 text-indigo-600" />
-                        </div>
-                        <div>
-                            <h3 className="font-medium text-gray-900">Configure security settings</h3>
-                            <p className="text-gray-600 text-sm">Establish your password and security preferences</p>
-                        </div>
-                    </div>
-
-                    <div className="flex items-start">
+                    {/* <div className="flex items-start">
                         <div className="bg-indigo-100 rounded-full p-1 mr-3 mt-1">
                             <Check className="h-4 w-4 text-indigo-600" />
                         </div>
@@ -50,7 +40,7 @@ export default function WelcomeStep() {
                             <h3 className="font-medium text-gray-900">Set up recovery options</h3>
                             <p className="text-gray-600 text-sm">Ensure you never lose access to your funds</p>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="flex items-start">
                         <div className="bg-indigo-100 rounded-full p-1 mr-3 mt-1">
@@ -65,7 +55,7 @@ export default function WelcomeStep() {
             </div>
 
             <p className="text-sm text-gray-500">
-                This process takes about 5 minutes to complete.
+                This process takes no time to complete.
             </p>
         </div>
     );
