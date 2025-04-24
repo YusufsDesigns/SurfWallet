@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "../provider";
+import '@rainbow-me/rainbowkit/styles.css';
+import { Web3AuthProvider } from '../components/Web3AuthProvider';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Web3AuthProvider>
+          {/* <Providers> */}
+          {children}
+          {/* </Providers> */}
+        </Web3AuthProvider>
       </body>
     </html>
   );
