@@ -57,8 +57,8 @@ export default function Dashboard() {
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-xl font-semibold text-gray-800">Your Assets</h2>
               <span className="text-2xl font-bold text-gray-900">$5,176.00</span>
-              <p>Address: {address || "0x00"}</p>
-              <p>Balance: {balance?.value || 0}</p>
+              {/* <p>Address: {address || "0x00"}</p>
+              <p>Balance: {balance?.value || 0}</p> */}
             </div>
             
             <div className="space-y-4">
@@ -120,7 +120,7 @@ export default function Dashboard() {
           <div className="bg-white rounded-xl shadow-sm p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-6">Quick Actions</h2>
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4">
               <button className="flex flex-col items-center justify-center px-4 py-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer">
                 <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-2">
                   <Plus className="w-6 h-6" />
@@ -128,16 +128,16 @@ export default function Dashboard() {
                 <span className="text-sm font-medium text-gray-700">Add Token</span>
               </button>
               
-              <button className="flex flex-col items-center justify-center px-4 py-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer">
+              {/* <button className="flex flex-col items-center justify-center px-4 py-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition cursor-pointer">
                 <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-600 mb-2">
                   <Clock className="w-6 h-6" />
                 </div>
                 <span className="text-sm font-medium text-gray-700">Schedule</span>
-              </button>
+              </button> */}
             </div>
           </div>
           
-          <div className="bg-white rounded-xl shadow-sm p-6">
+          {/* <div className="bg-white rounded-xl shadow-sm p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Wallet Security</h2>
             
             <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
@@ -155,7 +155,7 @@ export default function Dashboard() {
             </div>
             
             <a href="/guardians" className="text-sm text-indigo-600 hover:text-indigo-800 block text-center mt-2">Manage guardians</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </MainLayout>
