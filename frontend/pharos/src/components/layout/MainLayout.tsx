@@ -1,12 +1,16 @@
-// components/layout/MainLayout.jsx
+"use client";
 import React from 'react';
-import { Bell, Settings, User, Wallet, Activity, ArrowUpRight, Clock } from 'lucide-react';
+import { Bell, Settings, User, Wallet, Activity } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 interface MainLayoutProps {
   children: React.ReactNode;
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
+  // const router = useRouter();
+  const currentPath = usePathname();
+
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
@@ -16,27 +20,22 @@ export default function MainLayout({ children }: MainLayoutProps) {
         </div>
         
         <nav className="flex-1 px-4 space-y-1">
-          <a href="/dashboard" className="flex items-center px-2 py-3 rounded-lg text-gray-800 bg-indigo-50 group">
+          <a href="/dashboard" className={`flex items-center px-2 py-3 rounded-lg ${currentPath === '/dashboard' ? 'text-gray-800 bg-indigo-50' : 'text-gray-600 hover:bg-gray-100'} group`}>
             <Wallet className="w-5 h-5 mr-3 text-indigo-600" />
             <span className="font-medium">Assets</span>
           </a>
           
-          <a href="/transactions" className="flex items-center px-2 py-3 rounded-lg text-gray-600 hover:bg-gray-100 group">
+          <a href="/transactions" className={`flex items-center px-2 py-3 rounded-lg ${currentPath === '/transactions' ? 'text-gray-800 bg-indigo-50' : 'text-gray-600 hover:bg-gray-100'} group`}>
             <Activity className="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-600" />
             <span>Transactions</span>
           </a>
           
-          <a href="/schedule" className="flex items-center px-2 py-3 rounded-lg text-gray-600 hover:bg-gray-100 group">
-            <Clock className="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-600" />
-            <span>Scheduled</span>
-          </a>
-          
-          <a href="/guardians" className="flex items-center px-2 py-3 rounded-lg text-gray-600 hover:bg-gray-100 group">
+          <a href="/guardians" className={`flex items-center px-2 py-3 rounded-lg ${currentPath === '/guardians' ? 'text-gray-800 bg-indigo-50' : 'text-gray-600 hover:bg-gray-100'} group`}>
             <User className="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-600" />
             <span>Guardians</span>
           </a>
           
-          <a href="/settings" className="flex items-center px-2 py-3 rounded-lg text-gray-600 hover:bg-gray-100 group">
+          <a href="/settings" className={`flex items-center px-2 py-3 rounded-lg ${currentPath === '/settings' ? 'text-gray-800 bg-indigo-50' : 'text-gray-600 hover:bg-gray-100'} group`}>
             <Settings className="w-5 h-5 mr-3 text-gray-400 group-hover:text-gray-600" />
             <span>Settings</span>
           </a>

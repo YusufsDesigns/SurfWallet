@@ -29,7 +29,16 @@ export default function GuardiansPage() {
 
   return (
     <MainLayout>
-      <div className="max-w-4xl mx-auto">
+      <div className="relative max-w-4xl mx-auto">
+      <div className="absolute inset-0 bg-transparent bg-opacity-40 backdrop-blur-xs z-10 pointer-events-none"></div>
+
+      {/* Coming Soon text overlay */}
+    <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+      <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-3xl font-bold py-4 px-8 rounded-lg shadow-xl">
+        COMING SOON
+      </div>
+    </div>
+
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Guardian Management</h1>
