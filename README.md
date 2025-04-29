@@ -43,15 +43,28 @@ graph TD
 - **SmartAccountFactory.sol**: CREATE2 wallet deployer
 - **SmartPaymaster.sol**: Gas sponsorship logic
 
-## Technical Specifications
+# Technical Specifications
 
-### Contract Addresses (Pharos Devnet)
-| Contract | Address |
-|----------|---------|
-| EntryPoint | `0xB3dFDDdf64D291d828891d4B6593747f12861ea1` |
-| SmartAccountFactory | `0x9406Cc6185a346906296840746125a0E44976454` |
-| SmartPaymaster | `0xeC17FE9bFc20a38bBEC869ECED85603Cd1Fb9d34` |
+## 🌊 Pharos-Specific Deployment
 
+### Network Configuration
+```javascript
+{
+  "network": "Pharos Devnet",
+  "chainId": 50002,
+  "rpcUrl": "https://devnet.dplabs-internal.com",
+  "wsUrl": "wss://devnet.dplabs-internal.com",
+  "explorer": "https://pharosscan.xyz/"
+}
+```
+
+## 📜 Contract Addresses (Pharos Devnet)
+
+| Contract               | Address                                      |
+|------------------------|----------------------------------------------|
+| EntryPoint             | `0xb3dfdddf64d291d828891d4b6593747f12861ea1` |
+| SmartAccountFactory    | `0x9406Cc6185a346906296840746125a0E44976454` |
+| SmartPaymaster         | `0xeC17FE9bFc20a38bBEC869ECED85603Cd1Fb9d34` |
 
 ## Getting Started
 
