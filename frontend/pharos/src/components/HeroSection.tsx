@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="container mx-auto px-6 py-16 md:py-24">
+    <section className="max-w-[1400px] mx-auto px-6 py-16 md:py-24">
       <div className="flex flex-col md:flex-row items-center">
         <div className="md:w-1/2 mb-12 md:mb-0">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
@@ -12,9 +13,9 @@ const HeroSection = () => {
             Secure, simple, and social. Manage your crypto assets with confidence using advanced multisig security and intuitive controls.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <a href="/onboarding" className="px-8 py-3 bg-indigo-600 text-white text-center rounded-lg font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+            <Link href="/onboarding" className="px-8 py-3 bg-indigo-600 text-white text-center rounded-lg font-medium hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
               Get Started
-            </a>
+            </Link>
             <a href="#features" className="px-8 py-3 border border-gray-300 text-gray-700 text-center rounded-lg font-medium hover:bg-gray-50 transition">
               Learn More
             </a>

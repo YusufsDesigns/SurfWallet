@@ -94,12 +94,16 @@ export const Web3AuthProvider = ({ children }: {children: React.ReactNode}) => {
           web3AuthNetwork: WEB3AUTH_NETWORK.SAPPHIRE_DEVNET,
           privateKeyProvider
         });
-
+        console.log("Web3Auth initialized:", web3authInstance);
         await web3authInstance.initModal();
+        // console.log("Web3Auth initialized:", web3authInstance);
+        
         setWeb3auth(web3authInstance);
 
         if (web3authInstance.status === "connected" && web3authInstance.provider) {
           setProvider(web3authInstance.provider);
+          console.log("Provider:", web3authInstance.provider);
+          
           try {
             const userData = await web3authInstance.getUserInfo();
             setUser(userData);
@@ -128,6 +132,7 @@ export const Web3AuthProvider = ({ children }: {children: React.ReactNode}) => {
       setProvider(web3authProvider);
       if (web3authProvider) {
         const userData = await web3auth.getUserInfo();
+        
         setUser(userData);
       }
       return web3authProvider;

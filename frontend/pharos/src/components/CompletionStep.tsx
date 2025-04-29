@@ -11,7 +11,7 @@ export default function CompletionStep({ name }: { name: string }) {
 
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Setup Complete!</h1>
             <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
-                Congratulations {name}! Your SecureWallet is ready to use.
+                Congratulations {name}! Your SurfWallet is ready to use.
             </p>
 
             <div className="bg-white rounded-xl p-8 shadow-md mb-8">
@@ -49,7 +49,7 @@ export default function CompletionStep({ name }: { name: string }) {
                         <div className="text-left">
                             <h3 className="font-medium text-gray-900 mb-1">Invite Friends</h3>
                             <p className="text-gray-600 text-sm">
-                                Share SecureWallet with friends to make transfers easier and earn rewards.
+                                Share SurfWallet with friends to make transfers easier and earn rewards.
                             </p>
                         </div>
                     </div>

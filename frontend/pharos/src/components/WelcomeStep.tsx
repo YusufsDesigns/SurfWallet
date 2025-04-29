@@ -13,7 +13,7 @@ export default function WelcomeStep() {
                 </div>
             </div>
 
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Welcome to SecureWallet</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Welcome to SurfWallet</h1>
             <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
                 Your journey to secure crypto management starts here. Let's set up your personal wallet in just a few steps.
             </p>

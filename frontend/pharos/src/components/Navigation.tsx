@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
+import Link from 'next/link';
 
 const Navigation = () => {
   return (
@@ -7,7 +8,7 @@ const Navigation = () => {
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <Shield className="h-8 w-8 text-indigo-600" />
-          <span className="ml-2 text-xl font-bold text-gray-900">SecureWallet</span>
+          <span className="ml-2 text-xl font-bold text-gray-900">SurfWallet</span>
         </div>
         <div className="hidden md:flex space-x-8">
           <a href="#features" className="text-gray-700 hover:text-indigo-600 transition">Features</a>
@@ -15,9 +16,9 @@ const Navigation = () => {
           <a href="#faq" className="text-gray-700 hover:text-indigo-600 transition">FAQ</a>
         </div>
         <div>
-          <a href="/onboarding" className="hidden md:inline-block px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+          <Link href="/onboarding" className="hidden md:inline-block px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
             Launch App
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

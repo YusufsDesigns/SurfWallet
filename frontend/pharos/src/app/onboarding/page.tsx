@@ -57,7 +57,7 @@ export default function OnboardingFlow() {
       <header className="container mx-auto px-6 py-6">
         <div className="flex items-center">
           <Shield className="h-8 w-8 text-indigo-600" />
-          <span className="ml-2 text-xl font-bold text-gray-900">SecureWallet</span>
+          <span className="ml-2 text-xl font-bold text-gray-900">SurfWallet</span>
         </div>
       </header>
 

@@ -157,4 +157,5 @@ const signMessage = async (provider: IProvider): Promise<any> => {
   }
 }
 
-export default {getChainId, getAccounts, getBalance, sendTransaction, signMessage};
+const vIemRPC = { getChainId, getAccounts, getBalance, sendTransaction, signMessage };
+export default vIemRPC;

@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="mb-8 md:mb-0">
             <div className="flex items-center mb-4">
               <Shield className="h-8 w-8 text-indigo-400" />
-              <span className="ml-2 text-xl font-bold">SecureWallet</span>
+              <span className="ml-2 text-xl font-bold">SurfWallet</span>
             </div>
             <p className="text-gray-400 max-w-xs">
               The next generation smart wallet built for security and simplicity.
@@ -50,7 +50,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">© 2025 SecureWallet. All rights reserved.</p>
+          <p className="text-gray-400">© 2025 SurfWallet. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white transition">
               Privacy Policy

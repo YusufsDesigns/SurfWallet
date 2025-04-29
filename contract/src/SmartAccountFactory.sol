@@ -23,24 +23,24 @@ contract SmartAccountFactory {
      * Deploys a new SmartAccount using CREATE2, or returns an existing one if already deployed.
      * Can only be called by senderCreator.
      */
-    function createAccount(uint256 salt) public returns (SmartAccount ret) {
+    function createAccount(address owner, uint256 salt) public returns (SmartAccount ret) {
         require(msg.sender == address(senderCreator), "only callable from SenderCreator");
 
-        address addr = getAddress(salt);
+        address addr = getAddress(owner, salt);
         if (addr.code.length > 0) {
             return SmartAccount(payable(addr));
         }
 
-        ret = new SmartAccount{salt: bytes32(salt)}(address(entryPoint));
+        ret = new SmartAccount{salt: bytes32(salt)}(address(entryPoint), owner);
     }
 
     /**
      * Computes the counterfactual address of a SmartAccount as if it were deployed.
      */
-    function getAddress(uint256 salt) public view returns (address) {
+    function getAddress(address owner, uint256 salt) public view returns (address) {
         bytes memory bytecode = abi.encodePacked(
             type(SmartAccount).creationCode,
-            abi.encode(entryPoint)
+            abi.encode(entryPoint, owner)
         );
 
         return Create2.computeAddress(bytes32(salt), keccak256(bytecode));

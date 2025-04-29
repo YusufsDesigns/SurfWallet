@@ -13,7 +13,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="container mx-auto px-6 py-16 md:py-24">
+    <section className="max-w-[1400px] mx-auto px-6 py-16 md:py-24">
       <div className="bg-indigo-600 rounded-2xl shadow-xl overflow-hidden">
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-8 md:p-12">

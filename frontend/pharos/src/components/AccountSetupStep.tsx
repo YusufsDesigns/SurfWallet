@@ -1,7 +1,11 @@
 "use client"
 import { useState, useEffect } from 'react'
 import { Info, Loader2 } from 'lucide-react';
-import { useWeb3Auth } from './Web3AuthProvider';
+import { useWeb3Auth  } from './Web3AuthProvider';
+import { createUserOp, signUserOp, UserOperation } from '@/utils/userOpUtils';
+import { config } from '@/config';
+import { API_URL } from '@/constant';
+import { serializeUserOp } from '@/utils/serialization';
 
 export default function AccountSetupStep({
     name,
@@ -32,7 +36,31 @@ export default function AccountSetupStep({
     const handleWeb3AuthLogin = async () => {
         setIsLoading(true);
         try {
-            await login();
+            const web3AuthProvider = await login();
+            if(!web3AuthProvider) {
+                throw new Error("Failed to get Web3Auth provider");
+            }
+            
+            const userOp = await createUserOp(
+                web3AuthProvider,
+                { to: '0x0000000000000000000000000000000000000000', value: BigInt(0), data: '0x' },
+                config.FACTORY_ADDRESS as `0x${string}`,
+            );
+            
+            const signature = await signUserOp(web3AuthProvider, userOp);
+            const serializedUserOp = serializeUserOp(userOp);
+            
+            const response = await fetch(`${API_URL}/api/rpc`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    jsonrpc: '2.0',
+                    method: 'eth_sendUserOperation',
+                    params: [{ ...serializedUserOp, signature }]
+                })
+            });            
+            
+            const result = await response.json();
+            console.log('UserOp submitted:', result);
         } catch (error) {
             console.error("Login failed:", error);
         } finally {
@@ -59,7 +87,7 @@ export default function AccountSetupStep({
                                 id="name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-black"
                                 placeholder="Enter your full name"
                                 required
                             />
@@ -72,12 +100,12 @@ export default function AccountSetupStep({
                                 id="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition text-black"
                                 placeholder="your@email.com"
                                 required
                             />
                             <p className="text-sm text-gray-500 mt-2">
-                                We'll use this email for important security notifications and recovery.
+                                We&apos;ll use this email for important security notifications and recovery.
                             </p>
                         </div>
                     </div>

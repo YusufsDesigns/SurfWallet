@@ -3,7 +3,7 @@ import { Shield, Wallet, ArrowUpRight } from 'lucide-react';
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="container mx-auto px-6 py-16 md:py-24">
+    <section id="features" className="max-w-[1400px] mx-auto px-6 py-16 md:py-24">
       <div className="text-center mb-16">
         <h2 className="text-3xl font-bold text-gray-900 mb-4">Powerful Features</h2>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
