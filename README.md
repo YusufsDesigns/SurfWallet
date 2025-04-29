@@ -45,7 +45,7 @@ graph TD
 
 ## Technical Specifications
 
-### Contract Addresses (Devnet)
+### Contract Addresses (Pharos Devnet)
 | Contract | Address |
 |----------|---------|
 | EntryPoint | `0xB3dFDDdf64D291d828891d4B6593747f12861ea1` |
